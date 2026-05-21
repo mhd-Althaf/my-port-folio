@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 240" fill="none">
+  <rect width="400" height="240" rx="16" fill="#0f172a"/>
+  <circle cx="200" cy="100" r="40" stroke="#34d399" stroke-width="3" fill="none"/>
+  <rect x="160" y="150" width="80" height="50" rx="8" fill="#34d399" opacity="0.3"/>
+  <text x="200" y="220" text-anchor="middle" fill="#94a3b8" font-family="system-ui" font-size="14">Auth System</text>
+</svg>

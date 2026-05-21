@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 240" fill="none">
+  <rect width="400" height="240" rx="16" fill="#0f172a"/>
+  <rect x="80" y="70" width="240" height="100" rx="8" fill="#1e3a5f" stroke="#3b82f6" stroke-width="2"/>
+  <text x="110" y="110" fill="#60a5fa" font-family="monospace" font-size="16">WPM: 72</text>
+  <text x="110" y="140" fill="#94a3b8" font-family="monospace" font-size="14">accuracy: 98%</text>
+</svg>

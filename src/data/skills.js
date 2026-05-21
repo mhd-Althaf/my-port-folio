@@ -1,0 +1,16 @@
+export const skills = [
+  { name: 'HTML', level: 90, category: 'frontend' },
+  { name: 'CSS', level: 88, category: 'frontend' },
+  { name: 'JavaScript', level: 85, category: 'frontend' },
+  { name: 'React.js', level: 82, category: 'frontend' },
+  { name: 'Tailwind CSS', level: 80, category: 'frontend' },
+  { name: 'Bootstrap', level: 78, category: 'frontend' },
+  { name: 'Node.js', level: 78, category: 'backend' },
+  { name: 'Express.js', level: 76, category: 'backend' },
+  { name: 'MongoDB', level: 75, category: 'backend' },
+  { name: 'Mongoose', level: 74, category: 'backend' },
+  { name: 'JWT', level: 72, category: 'backend' },
+  { name: 'Git', level: 85, category: 'tools' },
+  { name: 'GitHub', level: 88, category: 'tools' },
+  { name: 'Postman', level: 80, category: 'tools' },
+]
