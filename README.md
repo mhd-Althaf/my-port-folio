@@ -32,9 +32,11 @@ Edit these files — no need to touch components:
 | `src/data/timeline.js` | Journey milestones |
 | `src/data/about.js` | About highlight cards |
 
-**Resume:** Add your PDF as `public/resume.pdf` (the download button uses `/resume.pdf`).
+**Resume:** `public/resume.pdf` (already added from your MERN resume).
 
-**Project screenshots:** Replace SVGs in `public/projects/` or use PNG/WebP paths in `projects.js`.
+**Profile photo:** `public/images/profile.png` — used in Hero, About, Contact, favicon.
+
+**Project screenshots:** When ready, set `screenshot: '/projects/urbanwood.png'` in `projects.js` — mockups show until then.
 
 ## Deploy
 

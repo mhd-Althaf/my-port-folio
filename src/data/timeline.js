@@ -1,9 +1,9 @@
 export const timeline = [
   {
-    year: '2020',
+    year: '2022',
     title: 'B.Com Graduation',
     description:
-      'Completed B.Com (Computer Applications), blending business fundamentals with technology.',
+      'Graduated B.Com from University of Calicut, blending business fundamentals with technology.',
   },
   {
     year: '2023',

@@ -1,4 +1,5 @@
 import { motion } from 'framer-motion'
+import { transition } from '../../utils/motion'
 import { FaPuzzlePiece, FaUsers, FaBolt, FaComments } from 'react-icons/fa'
 import SectionTitle from '../ui/SectionTitle'
 import TiltCard from '../ui/TiltCard'
@@ -25,11 +26,11 @@ export default function About() {
           initial={{ opacity: 0, x: -30 }}
           whileInView={{ opacity: 1, x: 0 }}
           viewport={{ once: true }}
-          transition={{ duration: 0.6 }}
+          transition={transition.premium}
           className="glass rounded-3xl p-8 md:p-10"
         >
           <p className="text-zinc-300 leading-relaxed mb-4">
-            I&apos;m a <strong className="text-white">B.Com graduate</strong> transitioning into
+            I&apos;m a <strong className="text-white">B.Com graduate (2022)</strong> transitioning into
             full-stack development with hands-on{' '}
             <strong className="text-cyan-400">MERN stack training at Brototype</strong>.
           </p>
@@ -55,7 +56,7 @@ export default function About() {
                 initial={{ opacity: 0, y: 24 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
-                transition={{ delay: i * 0.1, duration: 0.5 }}
+                transition={{ delay: i * 0.08, ...transition.soft }}
               >
                 <TiltCard>
                   <div className="glass rounded-2xl p-6 h-full hover:border-cyan-500/30 transition-colors">

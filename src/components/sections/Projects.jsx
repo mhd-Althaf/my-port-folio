@@ -4,14 +4,15 @@ import { FaGithub, FaExternalLinkAlt } from 'react-icons/fa'
 import SectionTitle from '../ui/SectionTitle'
 import GlowButton from '../ui/GlowButton'
 import { projects } from '../../data/projects'
+import { transition } from '../../utils/motion'
 import { cn } from '../../utils/cn'
 
 function FeaturedProject({ project }) {
   const ref = useRef(null)
   const x = useMotionValue(0)
   const y = useMotionValue(0)
-  const springX = useSpring(x, { stiffness: 200, damping: 25 })
-  const springY = useSpring(y, { stiffness: 200, damping: 25 })
+  const springX = useSpring(x, { stiffness: 120, damping: 26 })
+  const springY = useSpring(y, { stiffness: 120, damping: 26 })
 
   const onMove = (e) => {
     const rect = ref.current?.getBoundingClientRect()
@@ -27,7 +28,7 @@ function FeaturedProject({ project }) {
       initial={{ opacity: 0, y: 40 }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true }}
-      transition={{ duration: 0.7 }}
+      transition={transition.premium}
       className="relative mb-16 rounded-3xl p-[2px] overflow-hidden group"
     >
       <div
@@ -103,9 +104,9 @@ function ProjectCard({ project, index }) {
       initial={{ opacity: 0, y: 30 }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true }}
-      transition={{ delay: index * 0.1 }}
-      whileHover={{ y: -8 }}
-      className="glass rounded-2xl overflow-hidden group hover:border-violet-500/30 transition-all duration-300"
+      transition={{ delay: index * 0.1, ...transition.soft }}
+      whileHover={{ y: -6 }}
+      className="glass rounded-2xl overflow-hidden group hover:border-violet-500/30 transition-all duration-500"
     >
       <div
         className={cn(

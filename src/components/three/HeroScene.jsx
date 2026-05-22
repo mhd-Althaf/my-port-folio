@@ -9,13 +9,13 @@ function FloatingShapes({ mouse }) {
   useFrame((state) => {
     if (!group.current) return
     const t = state.clock.elapsedTime
-    group.current.rotation.y = t * 0.08 + mouse.x * 0.4
-    group.current.rotation.x = mouse.y * 0.25
+    group.current.rotation.y = t * 0.04 + mouse.x * 0.2
+    group.current.rotation.x = mouse.y * 0.12
   })
 
   return (
     <group ref={group}>
-      <Float speed={2} rotationIntensity={0.4} floatIntensity={1.2}>
+      <Float speed={1.1} rotationIntensity={0.2} floatIntensity={0.6}>
         <mesh position={[-1.2, 0.3, 0]}>
           <icosahedronGeometry args={[0.55, 1]} />
           <MeshDistortMaterial
@@ -29,13 +29,13 @@ function FloatingShapes({ mouse }) {
           />
         </mesh>
       </Float>
-      <Float speed={1.5} rotationIntensity={0.6} floatIntensity={1}>
+      <Float speed={0.9} rotationIntensity={0.25} floatIntensity={0.45}>
         <mesh position={[1.4, -0.2, -0.5]}>
           <torusKnotGeometry args={[0.35, 0.1, 128, 16]} />
           <meshStandardMaterial color="#a78bfa" emissive="#7c3aed" emissiveIntensity={0.3} metalness={0.7} roughness={0.3} />
         </mesh>
       </Float>
-      <Float speed={2.5} rotationIntensity={0.3} floatIntensity={0.8}>
+      <Float speed={1.2} rotationIntensity={0.15} floatIntensity={0.4}>
         <mesh position={[0.2, 0.8, -0.8]}>
           <octahedronGeometry args={[0.4, 0]} />
           <meshStandardMaterial color="#f472b6" emissive="#db2777" emissiveIntensity={0.25} wireframe />
@@ -58,7 +58,7 @@ function Particles({ count = 400 }) {
   }, [count])
 
   useFrame((_, delta) => {
-    if (ref.current) ref.current.rotation.y += delta * 0.02
+    if (ref.current) ref.current.rotation.y += delta * 0.008
   })
 
   return (
@@ -78,8 +78,8 @@ function SceneContent({ mouse }) {
       <directionalLight position={[5, 5, 5]} intensity={1.2} color="#e0f2fe" />
       <pointLight position={[-3, -2, 2]} intensity={0.8} color="#a78bfa" />
       <FloatingShapes mouse={mouse} />
-      <Particles count={350} />
-      <Stars radius={80} depth={40} count={1200} factor={3} saturation={0} fade speed={0.5} />
+      <Particles count={180} />
+      <Stars radius={80} depth={40} count={600} factor={2.5} saturation={0} fade speed={0.25} />
     </>
   )
 }

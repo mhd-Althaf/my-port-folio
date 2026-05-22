@@ -1,4 +1,5 @@
 import { motion } from 'framer-motion'
+import { transition } from '../../utils/motion'
 import { cn } from '../../utils/cn'
 
 export default function GlowButton({
@@ -25,8 +26,9 @@ export default function GlowButton({
   const classes = cn(base, variants[variant], className)
 
   const motionProps = {
-    whileHover: { scale: 1.03, y: -2 },
-    whileTap: { scale: 0.98 },
+    whileHover: { scale: 1.02, y: -1 },
+    whileTap: { scale: 0.99 },
+    transition: transition.hover,
   }
 
   if (href) {

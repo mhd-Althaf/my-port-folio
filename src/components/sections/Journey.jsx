@@ -1,6 +1,7 @@
 import { motion } from 'framer-motion'
 import SectionTitle from '../ui/SectionTitle'
 import { timeline } from '../../data/timeline'
+import { transition } from '../../utils/motion'
 import { cn } from '../../utils/cn'
 
 export default function Journey() {
@@ -24,7 +25,7 @@ export default function Journey() {
             initial={{ opacity: 0, x: i % 2 === 0 ? -30 : 30 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true, margin: '-50px' }}
-            transition={{ duration: 0.5, delay: i * 0.08 }}
+            transition={{ delay: i * 0.07, ...transition.soft }}
             className={cn(
               'relative flex gap-8 mb-12 last:mb-0',
               'md:odd:flex-row-reverse md:odd:text-right'

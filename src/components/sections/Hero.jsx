@@ -6,7 +6,9 @@ import { HiChevronDown } from 'react-icons/hi'
 import { SiReact, SiNodedotjs, SiMongodb, SiJavascript } from 'react-icons/si'
 import { siteConfig } from '../../data/siteConfig'
 import GlowButton from '../ui/GlowButton'
+import ResumeButton from '../ui/ResumeButton'
 import { useMediaQuery } from '../../hooks/useMediaQuery'
+import { duration, ease, transition } from '../../utils/motion'
 
 const HeroScene = lazy(() => import('../three/HeroScene'))
 
@@ -50,10 +52,10 @@ export default function Hero() {
             key={label}
             className={`absolute hidden lg:flex p-3 rounded-2xl glass ${className}`}
             initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: [0, -12, 0] }}
+            animate={{ opacity: 1, y: [0, -8, 0] }}
             transition={{
-              opacity: { delay: 0.8 + i * 0.1, duration: 0.5 },
-              y: { repeat: Infinity, duration: 4 + i, ease: 'easeInOut' },
+              opacity: { delay: 0.8 + i * 0.1, duration: 0.8, ease: ease.soft },
+              y: { repeat: Infinity, duration: 6 + i * 0.6, ease: 'easeInOut' },
             }}
             aria-hidden
           >
@@ -64,18 +66,18 @@ export default function Hero() {
       <div className="relative z-10 section-padding w-full text-center lg:text-left">
         <div className="max-w-4xl mx-auto lg:mx-0">
           <motion.p
-            initial={{ opacity: 0, y: 20 }}
+            initial={{ opacity: 0, y: 16 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5 }}
+            transition={{ duration: duration.slow, ease: ease.premium }}
             className="text-cyan-400 font-medium tracking-wide mb-4"
           >
             Hello, I&apos;m
           </motion.p>
 
           <motion.h1
-            initial={{ opacity: 0, y: 30 }}
+            initial={{ opacity: 0, y: 24 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.1 }}
+            transition={{ duration: duration.reveal, delay: 0.08, ease: ease.premium }}
             className="font-display text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-white leading-tight"
           >
             {siteConfig.name}
@@ -84,7 +86,7 @@ export default function Hero() {
           <motion.p
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
-            transition={{ delay: 0.25 }}
+            transition={{ delay: 0.22, duration: duration.slow, ease: ease.soft }}
             className="mt-4 text-xl md:text-2xl text-zinc-400"
           >
             {siteConfig.title}
@@ -93,28 +95,28 @@ export default function Hero() {
           <motion.div
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
-            transition={{ delay: 0.4 }}
+            transition={{ delay: 0.35, duration: duration.slow, ease: ease.soft }}
             className="mt-6 h-10 flex items-center justify-center lg:justify-start text-lg md:text-xl text-zinc-300"
           >
             <span className="text-violet-400 mr-2">&gt;</span>
             <TypeAnimation
-              sequence={siteConfig.typingRoles.flatMap((role) => [role, 2000])}
+              sequence={siteConfig.typingRoles.flatMap((role) => [role, 2800])}
               wrapper="span"
-              speed={50}
+              speed={40}
               repeat={Infinity}
               className="text-gradient font-medium"
             />
           </motion.div>
 
           <motion.div
-            initial={{ opacity: 0, y: 20 }}
+            initial={{ opacity: 0, y: 16 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.55 }}
+            transition={{ delay: 0.5, ...transition.premium }}
             className="mt-10 flex flex-wrap gap-4 justify-center lg:justify-start"
           >
-            <GlowButton href={siteConfig.resumeUrl} download variant="primary">
+            <ResumeButton>
               <FaDownload /> Resume
-            </GlowButton>
+            </ResumeButton>
             <GlowButton href={siteConfig.social.github} external variant="outline">
               <FaGithub size={18} /> GitHub
             </GlowButton>
@@ -129,8 +131,8 @@ export default function Hero() {
         type="button"
         onClick={scrollToAbout}
         initial={{ opacity: 0 }}
-        animate={{ opacity: 1, y: [0, 8, 0] }}
-        transition={{ opacity: { delay: 1 }, y: { repeat: Infinity, duration: 2 } }}
+        animate={{ opacity: 1, y: [0, 6, 0] }}
+        transition={{ opacity: { delay: 1.1, duration: 0.9 }, y: { repeat: Infinity, duration: 3.5, ease: 'easeInOut' } }}
         className="absolute bottom-8 left-1/2 -translate-x-1/2 z-10 flex flex-col items-center gap-1 text-zinc-500 hover:text-cyan-400"
         aria-label="Scroll to about section"
       >

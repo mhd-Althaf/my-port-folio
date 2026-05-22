@@ -8,6 +8,7 @@ export const siteConfig = {
   phone: '7012943828',
   location: 'Kalpetta, Wayanad, Kerala, India',
   resumeUrl: '/resume.pdf',
+  resumeFileName: 'Muhammed_Althaf_MERN_Resume.pdf',
   social: {
     github: 'https://github.com/mhd-Althaf',
     linkedin: 'https://www.linkedin.com/in/muhammed-althaf',
