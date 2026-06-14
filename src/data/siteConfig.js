@@ -11,7 +11,7 @@ export const siteConfig = {
   resumeFileName: 'Muhammed_Althaf_MERN_Resume.pdf',
   social: {
     github: 'https://github.com/mhd-Althaf',
-    linkedin: 'https://www.linkedin.com/in/muhammed-althaf',
+    linkedin: 'https://www.linkedin.com/in/muhammed-althaf-p-c-1176b3248',
   },
   typingRoles: [
     'Full Stack Developer',
